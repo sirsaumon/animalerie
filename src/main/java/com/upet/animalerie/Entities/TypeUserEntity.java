@@ -12,7 +12,7 @@ public class TypeUserEntity {
     @Column(name ="id")
     private Integer id;
 
-    @Column(name = "libellé")
+    @Column(name = "libelle")
     private String libelle;
 
     public Integer getId() {
