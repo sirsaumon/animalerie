@@ -21,6 +21,12 @@ public class AnimalEntity {
     @Column(name = "disponibilite")
     private Integer disponibilite;
 
+    @Column(name = "sexe")
+    private Integer sexe;
+
+    @Column(name = "age")
+    private Integer age;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "espece", referencedColumnName = "id")
     private TypeAnimalEntity id_type_espece;
@@ -55,6 +61,22 @@ public class AnimalEntity {
 
     public void setDisponibilite(Integer disponibilite) {
         this.disponibilite = disponibilite;
+    }
+
+    public Integer getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(Integer sexe) {
+        this.sexe = sexe;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public TypeAnimalEntity getId_type_espece() {
