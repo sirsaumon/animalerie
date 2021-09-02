@@ -15,9 +15,6 @@ public class AnimalEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "espece")
-    private Integer espece;
-
     @Column(name = "disponibilite")
     private Integer disponibilite;
 
@@ -47,14 +44,6 @@ public class AnimalEntity {
         this.name = name;
     }
 
-    public Integer getEspece() {
-        return espece;
-    }
-
-    public void setEspece(Integer espece) {
-        this.espece = espece;
-    }
-
     public Integer getDisponibilite() {
         return disponibilite;
     }
@@ -79,11 +68,11 @@ public class AnimalEntity {
         this.age = age;
     }
 
-    public TypeAnimalEntity getId_type_espece() {
-        return id_type_espece;
+    public Integer getId_type_espece() {
+        return this.id_type_espece.getId();
     }
 
-    public void setId_type_espece(TypeAnimalEntity id_type_espece) {
-        this.id_type_espece = id_type_espece;
+    public void setId_type_espece(Integer id_type_espece) {
+        this.id_type_espece.setId(id_type_espece);
     }
 }

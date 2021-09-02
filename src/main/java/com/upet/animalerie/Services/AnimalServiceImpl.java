@@ -19,7 +19,7 @@ public class AnimalServiceImpl implements AnimalService {
     public void add(String name, Integer espece, Integer diponibilite, Integer sexe, Integer age) {
         AnimalEntity entity = new AnimalEntity();
         entity.setName(name);
-        entity.setEspece(espece);
+        entity.setId_type_espece(espece);
         entity.setDisponibilite(diponibilite);
         entity.setSexe(sexe);
         entity.setAge(age);
@@ -60,7 +60,7 @@ public class AnimalServiceImpl implements AnimalService {
     private AnimalDTO entityToDto(AnimalEntity animalEntity) {
         AnimalDTO animalDTO = new AnimalDTO();
         animalDTO.setName(animalEntity.getName());
-        animalDTO.setEspece(animalEntity.getEspece());
+        animalDTO.setEspece(animalEntity.getId_type_espece());
         animalDTO.setDiponibilite(animalEntity.getDisponibilite());
         animalDTO.setSexe(animalEntity.getSexe());
         animalDTO.setAge(animalEntity.getAge());

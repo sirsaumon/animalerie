@@ -12,9 +12,6 @@ public  class UserEntity {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "type_utilisateur")
-    private Integer type_utilisateur;
-
     @Column(name = "nom")
     private String nom;
 
@@ -31,14 +28,6 @@ public  class UserEntity {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Integer getType_utilisateur() {
-        return type_utilisateur;
-    }
-
-    public void setType_utilisateur(Integer type_utilisateur) {
-        this.type_utilisateur = type_utilisateur;
     }
 
     public String getNom() {
