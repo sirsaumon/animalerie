@@ -34,16 +34,27 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public String getByID(Integer id) {
+    public AnimalDTO getByID(Integer id) {
         if(!animalRepository.findById(id).isPresent()){
-            return "L'animal n° " +id+ " n'existe pas";
+            return null;
         } else
         {
             AnimalEntity animalEntity = animalRepository.findById(id).get();
             AnimalDTO animalDTO = this.entityToDto(animalEntity);
-            return animalDTO.toString();
+            return animalDTO;
         }
+    }
 
+    @Override
+    public boolean updateDispo(Integer id, Integer dispo) {
+        if(!animalRepository.findById(id).isPresent()){
+            return false;
+        } else{
+            AnimalEntity animal = animalRepository.findById(id).get();
+            animal.setDisponibilite(dispo);
+            animalRepository.save(animal);
+            return true;
+        }
     }
 
     private AnimalDTO entityToDto(AnimalEntity animalEntity) {
@@ -53,7 +64,6 @@ public class AnimalServiceImpl implements AnimalService {
         animalDTO.setDiponibilite(animalEntity.getDisponibilite());
         animalDTO.setSexe(animalEntity.getSexe());
         animalDTO.setAge(animalEntity.getAge());
-
         return animalDTO;
     }
 

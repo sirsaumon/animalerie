@@ -14,6 +14,7 @@ public interface AnimalService {
 
     List<AnimalDTO> getAll();
 
-    String getByID(Integer id);
+    AnimalDTO getByID(Integer id);
 
+    boolean updateDispo(Integer id, Integer dispo);
 }
