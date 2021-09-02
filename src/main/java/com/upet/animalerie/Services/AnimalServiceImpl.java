@@ -33,6 +33,19 @@ public class AnimalServiceImpl implements AnimalService {
         return animalRepository.findAll().stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
+    @Override
+    public String getByID(Integer id) {
+        if(!animalRepository.findById(id).isPresent()){
+            return "L'animal n° " +id+ " n'existe pas";
+        } else
+        {
+            AnimalEntity animalEntity = animalRepository.findById(id).get();
+            AnimalDTO animalDTO = this.entityToDto(animalEntity);
+            return animalDTO.toString();
+        }
+
+    }
+
     private AnimalDTO entityToDto(AnimalEntity animalEntity) {
         AnimalDTO animalDTO = new AnimalDTO();
         animalDTO.setName(animalEntity.getName());
@@ -43,6 +56,7 @@ public class AnimalServiceImpl implements AnimalService {
 
         return animalDTO;
     }
+
 
 
 }

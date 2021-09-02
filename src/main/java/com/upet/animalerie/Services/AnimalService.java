@@ -14,4 +14,6 @@ public interface AnimalService {
 
     List<AnimalDTO> getAll();
 
+    String getByID(Integer id);
+
 }

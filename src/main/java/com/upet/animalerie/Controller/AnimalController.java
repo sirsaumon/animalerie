@@ -33,4 +33,10 @@ public class AnimalController {
         return animalService.getAll();
     }
 
+    // Methode GetByID permettant de recuperer un animal de la table en fonction de son ID
+    @GetMapping("GetByID/{ID}")
+    public String getByID(@PathVariable Integer ID) {
+        return animalService.getByID(ID);
+    }
+
 }
