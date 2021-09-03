@@ -7,6 +7,7 @@ public class AnimalDTO {
     private Integer diponibilite;
     private Integer sexe;
     private Integer age;
+    private String vendeur;
 
     public String getName() {
         return name;
@@ -48,6 +49,14 @@ public class AnimalDTO {
         this.age = age;
     }
 
+    public String getVendeur() {
+        return vendeur;
+    }
+
+    public void setVendeur(String vendeur) {
+        this.vendeur = vendeur;
+    }
+
     @Override
     public String toString() {
         return "AnimalDTO{" +
@@ -56,6 +65,7 @@ public class AnimalDTO {
                 ", diponibilite=" + diponibilite +
                 ", sexe=" + sexe +
                 ", age=" + age +
+                ", vendeur='" + vendeur + '\'' +
                 '}';
     }
 }

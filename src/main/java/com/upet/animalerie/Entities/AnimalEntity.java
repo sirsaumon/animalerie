@@ -28,6 +28,10 @@ public class AnimalEntity {
     @JoinColumn(name = "espece", referencedColumnName = "id")
     private TypeAnimalEntity id_type_espece;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vendeur", referencedColumnName = "id")
+    private UserEntity id_vendeur;
+
     public Integer getId() {
         return id;
     }
@@ -74,5 +78,17 @@ public class AnimalEntity {
 
     public void setId_type_espece(Integer id_type_espece) {
         this.id_type_espece.setId(id_type_espece);
+    }
+
+    public void setId_type_espece(TypeAnimalEntity id_type_espece) {
+        this.id_type_espece = id_type_espece;
+    }
+
+    public String getId_vendeur() {
+        return this.id_vendeur.getId();
+    }
+
+    public void setId_vendeur(UserEntity id_vendeur) {
+        this.id_vendeur = id_vendeur;
     }
 }

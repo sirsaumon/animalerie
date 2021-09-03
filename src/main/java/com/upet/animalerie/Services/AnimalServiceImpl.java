@@ -64,6 +64,7 @@ public class AnimalServiceImpl implements AnimalService {
         animalDTO.setDiponibilite(animalEntity.getDisponibilite());
         animalDTO.setSexe(animalEntity.getSexe());
         animalDTO.setAge(animalEntity.getAge());
+        animalDTO.setVendeur(animalEntity.getId_vendeur());
         return animalDTO;
     }
 
