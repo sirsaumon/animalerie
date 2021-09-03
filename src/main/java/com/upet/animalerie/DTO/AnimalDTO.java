@@ -8,6 +8,7 @@ public class AnimalDTO {
     private Integer sexe;
     private Integer age;
     private String vendeur;
+    private String adresseImage;
 
     public String getName() {
         return name;
@@ -57,6 +58,14 @@ public class AnimalDTO {
         this.vendeur = vendeur;
     }
 
+    public String getAdresseImage() {
+        return adresseImage;
+    }
+
+    public void setAdresseImage(String adresseImage) {
+        this.adresseImage = adresseImage;
+    }
+
     @Override
     public String toString() {
         return "AnimalDTO{" +
@@ -66,6 +75,7 @@ public class AnimalDTO {
                 ", sexe=" + sexe +
                 ", age=" + age +
                 ", vendeur='" + vendeur + '\'' +
+                ", adresseImage='" + adresseImage + '\'' +
                 '}';
     }
 }

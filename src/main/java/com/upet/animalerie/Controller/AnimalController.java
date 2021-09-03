@@ -18,10 +18,10 @@ public class AnimalController {
 
     //Methode Add pour ajouter un animal
     @PutMapping("Add")
-    public Boolean create(@RequestParam String name, @RequestParam String espece, @RequestParam Integer diponibilite, @RequestParam Integer sexe, @RequestParam Integer age) {
+    public Boolean create(@RequestParam String name, @RequestParam String espece, @RequestParam Integer diponibilite, @RequestParam Integer sexe, @RequestParam Integer age, @RequestParam String vendeur, @RequestParam String adresseImage) {
         try {
             Integer esp = Integer.parseInt(espece);
-            animalService.add(name, esp, diponibilite, sexe, age);
+            animalService.add(name, esp, diponibilite, sexe, age, vendeur, adresseImage);
             return true;
         } catch (Exception e) {
             return false;

@@ -16,13 +16,15 @@ public class AnimalServiceImpl implements AnimalService {
     private AnimalRepository animalRepository;
 
     @Override
-    public void add(String name, Integer espece, Integer diponibilite, Integer sexe, Integer age) {
+    public void add(String name, Integer espece, Integer diponibilite, Integer sexe, Integer age, String vendeur, String adresseImage) {
         AnimalEntity entity = new AnimalEntity();
         entity.setName(name);
         entity.setId_type_espece(espece);
         entity.setDisponibilite(diponibilite);
         entity.setSexe(sexe);
         entity.setAge(age);
+        entity.setId_vendeur(vendeur);
+        entity.setAdresseImage(adresseImage);
         animalRepository.save(entity);
 
     }
@@ -64,7 +66,8 @@ public class AnimalServiceImpl implements AnimalService {
         animalDTO.setDiponibilite(animalEntity.getDisponibilite());
         animalDTO.setSexe(animalEntity.getSexe());
         animalDTO.setAge(animalEntity.getAge());
-        animalDTO.setVendeur(animalEntity.getId_vendeur());
+        animalDTO.setVendeur(animalEntity.getId_vendeur().getId());
+        animalDTO.setAdresseImage(animalEntity.getAdresseImage());
         return animalDTO;
     }
 

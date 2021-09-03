@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface AnimalService {
 
-    void add(String name, Integer espece, Integer diponibilite, Integer sexe, Integer age);
+    void add(String name, Integer espece, Integer diponibilite, Integer sexe, Integer age, String vendeur, String adresseImage);
 
     List<AnimalDTO> getAll();
 

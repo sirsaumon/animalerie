@@ -32,6 +32,9 @@ public class AnimalEntity {
     @JoinColumn(name = "vendeur", referencedColumnName = "id")
     private UserEntity id_vendeur;
 
+    @Column(name = "adresseImage")
+    private String adresseImage;
+
     public Integer getId() {
         return id;
     }
@@ -84,11 +87,19 @@ public class AnimalEntity {
         this.id_type_espece = id_type_espece;
     }
 
-    public String getId_vendeur() {
-        return this.id_vendeur.getId();
+    public UserEntity getId_vendeur() {
+        return id_vendeur;
     }
 
-    public void setId_vendeur(UserEntity id_vendeur) {
-        this.id_vendeur = id_vendeur;
+    public void setId_vendeur(String id_vendeur) {
+        this.id_vendeur.setId(id_vendeur);
+    }
+
+    public String getAdresseImage() {
+        return adresseImage;
+    }
+
+    public void setAdresseImage(String adresseImage) {
+        this.adresseImage = adresseImage;
     }
 }
